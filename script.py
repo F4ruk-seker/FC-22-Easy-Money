@@ -53,4 +53,4 @@ if all(map(os.path.isdir, [MY_GAMES_DIR, FARMING_SM22_DIR])):
                 print(f'{k}: {v}')
             print(f'{farm_counter}.Farm => END {'*'*50}')
 
-            select = int(input('seçim id ile gösterilen parantez içersindeki sayıyı girin :'))
+            # select = int(input('seçim id ile gösterilen parantez içersindeki sayıyı girin :'))
