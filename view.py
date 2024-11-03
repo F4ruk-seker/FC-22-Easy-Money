@@ -1,5 +1,7 @@
-from tkinter import Tk
 
 
-tk = Tk.mainloop()
+students: list = ['ahmet', 'tanju']
+
+for student in students:
+    print(f'{student} ♥')
 

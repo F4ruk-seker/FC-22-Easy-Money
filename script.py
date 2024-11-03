@@ -5,7 +5,6 @@ import tkinter as tk
 from tkinter import messagebox
 
 
-
 DOCUMENTS_DIR: Path = Path(os.path.expanduser('~/Documents')).resolve()
 
 MY_GAMES_DIR: Path = DOCUMENTS_DIR / 'My Games'
@@ -32,15 +31,14 @@ def get_farm_career_info(xml_dir: Path) -> dict | None:
     }
 
 
-def update_farm_career_file_money(xml_dir: Path, new_money: int) -> None:
+def update_farm_career_file_money(xml_dir: Path, new_money: str) -> None:
+    print(f'os.path.isfile: {os.path.isfile(xml_dir)}, p> {xml_dir}')
     if os.path.isfile(xml_dir):
         tree = ET.parse(xml_dir)
         root = tree.getroot()
-
-        # Money bilgisine ulaşıp güncelleme yapıyoruz
-        money_element = root.find('.//statistics/money')
+        money_element = root.find('./statistics/money')
         if money_element is not None:
-            money_element.text = str(new_money)
+            money_element.text = new_money
             tree.write(xml_dir)
             print("Para başarıyla güncellendi!")
         else:
@@ -83,7 +81,7 @@ def show_farms():
                 farm_counter += 1
                 farm_frame = tk.Frame(window)
                 farm_frame.pack(pady=10)
-
+                print(f"Para: {farm_info['money']}")
                 tk.Label(farm_frame, text=f"Çiftlik {farm_counter}").pack()
                 tk.Label(farm_frame, text=f"Harita Başlığı: {farm_info['map_title']}").pack()
                 tk.Label(farm_frame, text=f"Kayıt Adı: {farm_info['savegame_name']}").pack()
@@ -93,8 +91,12 @@ def show_farms():
                 money_entry = tk.Entry(farm_frame)
                 money_entry.pack()
                 tk.Button(farm_frame, text="Parayı Güncelle",
-                          command=lambda dir=save_dir / farm_file_name, entry=money_entry:
-                          update_farm_file_money(dir, entry.get())).pack()
+                          command=lambda entry=money_entry:
+                          [
+                            update_farm_file_money(save_dir / farm_file_name, entry.get()),
+                            update_farm_career_file_money(save_dir / career_file_name, entry.get())
+                          ]
+                          ).pack()
 
 
 window = tk.Tk()
