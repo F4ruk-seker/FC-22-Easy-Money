@@ -1,0 +1,16 @@
+{
+    "lang_name": "American English",
+    "lang_code": "en-US",
+    "page_title" : "Farming Simulator editor",
+    "select_save_dir" : "Enter Game Save directory",
+    "select_save_placeholder" : "The games are located in the documents folder of your user where the system is installed.",
+    "select_default_dir": "Select default directory",
+    "select_farm" : "Select your farm",
+    "selected_farm" : "The farm you choose",
+    "farm_name" : "Farm Name",
+    "farm_money" : "Farm Budget ",
+    "farm_last_save_date" : "Farm last update date",
+    "save" : "Save",
+    "save_name": "Save name",
+    "map": "Map"
+}

@@ -1,0 +1,16 @@
+{
+    "lang_name": "Türkçe",
+    "lang_code": "tr",
+    "page_title" : "Farming Similatör Editörü",
+    "select_save_dir" : "Save dizinini giriniz",
+    "select_save_placeholder" : "Save dizini genelde belgeler klasöründe olur",
+    "select_default_dir": "Varsayılan",
+    "select_farm" : "Köyünüzü seçin",
+    "selected_farm" : "Seçtiğiniz Köy",
+    "farm_name" : "Köyün adı",
+    "farm_money" : "Köyün bütçesi",
+    "farm_last_save_date" : "Son güncellenme tarihi",
+    "save" : "Kaydet",
+    "save_name": "Save Adı",
+    "map": "Harita"
+}
