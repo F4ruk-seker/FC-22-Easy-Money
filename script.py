@@ -56,20 +56,6 @@ def update_farm_file_money(xml_dir: Path, new_money: str) -> None:
         tree.write(xml_dir)
         messagebox.showinfo("Başarılı", "Para güncellendi!")
 
-#
-# if all(map(os.path.isdir, [MY_GAMES_DIR, FARMING_SM22_DIR])):
-#     farm_counter: int = 0
-#     for file in os.listdir(FARMING_SM22_DIR):
-#         if file.startswith('savegame') and file != 'savegameBackup':
-#             save_dir = FARMING_SM22_DIR / file
-#             farm_counter += 1
-#
-#             print(f'Seçim id: ({file.replace('savegame', '')}) | Farm => ')
-#             for k, v in get_farm_career_info(save_dir / 'careerSavegame.xml').items():
-#                 print(f'{k}: {v}')
-#             print(f'{farm_counter}.Farm => END {'*'*50}')
-#
-#             select = int(input('seçim id ile gösterilen parantez içersindeki sayıyı girin :'))
 
 def show_farms():
     farm_counter = 0
@@ -77,6 +63,7 @@ def show_farms():
         if file.startswith('savegame') and file != 'savegameBackup':
             save_dir = FARMING_SM22_DIR / file
             farm_info = get_farm_career_info(save_dir / career_file_name)
+            print(farm_info)
             if 'ERROR' not in farm_info:
                 farm_counter += 1
                 farm_frame = tk.Frame(window)
