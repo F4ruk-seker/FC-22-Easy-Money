@@ -2,4 +2,4 @@
 
 ### Easily edit your farm's money and name 
 
-![Preview](images/preview.png)
+![Preview](images/preview_2.png)
