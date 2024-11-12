@@ -80,7 +80,7 @@ def run():
 
     st.set_page_config(
         page_title="Farm Editör",
-        page_icon="👋",
+        page_icon="🚜",
         initial_sidebar_state='collapsed',
         # layout="wide"
     )
@@ -93,14 +93,13 @@ def run():
 
     lang = load_lang(selected_language.strip().lower())
 
-    st.write(f'langis {lang.lang_name}')
     selected_farming_sm22_dir: str = st.text_input(
         label=lang.select_save_dir,
         placeholder=lang.select_save_placeholder,
         value=FARMING_SM22_DIR
     )
 
-    st.write(f"## {lang.select_farm}")
+    st.write(f"## {lang.select_farm} 👨🏻‍🌾")
 
     farms = list(get_farms(selected_farming_sm22_dir))
     sc = st.selectbox(
