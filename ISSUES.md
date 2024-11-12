@@ -1,1 +1,0 @@
-> - [x] career file missing farms <br>If the career file is missing and the farms do not have files, should we continue with the manipulation?

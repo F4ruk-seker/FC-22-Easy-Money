@@ -7,3 +7,4 @@ class FarmInfoModel:
     savegame_name: str | None = None
     save_date: str | None = None
     money: int | None = None
+    save_dir: str | None = None
